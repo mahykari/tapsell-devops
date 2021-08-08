@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Install the Build and Test Dependencies
-
 apt update
 apt install -y curl build-essential tcl
 
@@ -27,8 +26,8 @@ cp redis.service /etc/systemd/system/
 # Start Redis
 systemctl start redis
 
-# Enable Redis to Start at Boot
-systemctl enable redis
+# Enable Redis to Start at Boot (Currently not Needed)
+# systemctl enable redis
 
 # Clean
 rm -rf redis-stable/
