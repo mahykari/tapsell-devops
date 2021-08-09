@@ -13,8 +13,6 @@ MYSQL_PASS = 'M0yk-Loc4l'
 
 app = Flask(__name__)
 
-
-
 class DBInteface:
 	def __init__(self):
 		self.mysql_db = None
@@ -51,7 +49,5 @@ def result():
 	res = interface.get(id)
 	return render_template('result.html', res=res[0])
 
-def main():
+if __name__ == '__main__':
 	app.run(host=HOST, port=PORT_NUM)
-
-main()
