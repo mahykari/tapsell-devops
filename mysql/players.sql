@@ -1,0 +1,113 @@
+USE testdb;
+
+DROP TABLE IF EXISTS `players`;
+
+CREATE TABLE `players` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `rank` mediumint default NULL,
+  `score` mediumint default NULL,
+  `join_year` varchar(255),
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Jonas",1,72,3056,"03-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Phillip",2,59,8680,"26-01-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Ariana",3,15,3089,"25-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Avye",4,33,8632,"13-08-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Cameron",5,94,2091,"02-11-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Vladimir",6,10,4926,"02-03-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Jelani",7,35,3523,"07-11-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Daniel",8,25,5846,"10-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Brendan",9,1,1286,"05-04-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Sybil",10,68,1349,"13-01-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Xyla",11,76,6346,"06-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Lois",12,34,3683,"17-10-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Bianca",13,81,4398,"23-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Jemima",14,10,2918,"25-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Zenaida",15,54,8975,"09-05-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Silas",16,13,2446,"11-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Daquan",17,42,6138,"01-06-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Cassidy",18,31,7905,"16-08-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("James",19,2,8062,"02-04-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Tanek",20,68,7894,"27-04-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Joy",21,69,9020,"30-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Jessamine",22,64,5078,"25-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Morgan",23,35,7465,"17-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Xander",24,98,8251,"21-07-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Alexa",25,7,4725,"21-05-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Molly",26,10,4797,"08-10-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Cullen",27,38,8931,"07-12-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Lev",28,7,4041,"01-05-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Tashya",29,36,1842,"03-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Uriel",30,30,1200,"18-02-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Rhonda",31,30,7203,"05-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Rhea",32,29,2747,"13-08-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Callum",33,42,208,"09-11-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Christen",34,16,2895,"16-11-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Demetria",35,14,4699,"03-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Vivien",36,61,289,"25-11-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Lee",37,48,2940,"16-07-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("May",38,78,8133,"26-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Chastity",39,53,4934,"24-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Gavin",40,81,9135,"26-09-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Kathleen",41,87,868,"14-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Clarke",42,38,5298,"18-06-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Aphrodite",43,47,2870,"11-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Driscoll",44,35,5838,"03-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Sloane",45,7,8419,"15-07-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Cody",46,30,2602,"02-08-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Harper",47,42,9695,"05-08-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Germane",48,40,2097,"08-07-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Cheryl",49,46,7833,"31-05-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Eric",50,36,5251,"08-07-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Haley",51,34,7577,"01-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Ava",52,7,5493,"15-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Castor",53,99,6128,"21-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Brittany",54,52,8953,"11-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Joshua",55,93,6959,"01-04-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Gretchen",56,88,2452,"11-06-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Aiko",57,24,8842,"13-07-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Melissa",58,43,3971,"21-06-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Scarlett",59,73,755,"21-02-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("William",60,66,2261,"08-03-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Ria",61,55,8843,"18-12-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Philip",62,99,4637,"21-03-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Martha",63,8,2738,"08-04-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("May",64,89,7027,"16-06-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Julian",65,15,1276,"27-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Kylynn",66,52,5603,"21-07-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Sebastian",67,53,1550,"08-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Abdul",68,47,4821,"19-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Sopoline",69,100,6568,"22-07-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Valentine",70,90,9412,"08-05-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Portia",71,19,9426,"21-05-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Kadeem",72,41,573,"04-01-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Yael",73,62,7924,"31-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Erasmus",74,27,988,"15-07-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Teagan",75,60,3061,"14-10-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Robert",76,59,6484,"07-12-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Violet",77,76,372,"10-10-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Bert",78,33,3873,"25-04-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Athena",79,70,8853,"13-10-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Audra",80,50,5139,"14-03-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Driscoll",81,52,4296,"28-09-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Dieter",82,5,2706,"02-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Dane",83,90,5042,"11-09-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Steven",84,6,7000,"31-08-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Levi",85,55,3274,"02-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Jaime",86,93,1008,"25-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Sopoline",87,27,980,"28-12-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Shaine",88,42,616,"15-08-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Hiram",89,56,3755,"04-10-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Oliver",90,52,759,"10-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Maris",91,33,7824,"11-08-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Abbot",92,36,6218,"07-12-20");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Amy",93,33,7352,"31-07-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Tashya",94,48,1422,"04-03-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Quail",95,73,7145,"04-06-21");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Libby",96,77,3056,"02-06-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Hiram",97,63,7623,"22-05-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Brett",98,28,8425,"30-06-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Declan",99,57,1516,"01-02-22");
+INSERT INTO `players` (`name`,`id`,`rank`,`score`,`join_year`) VALUES ("Ria",100,22,3743,"08-08-20");
