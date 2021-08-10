@@ -4,7 +4,7 @@ from mysql import connector
 import redis
 
 HOST = '0.0.0.0'
-PORT_NUM = 10000
+PORT_NUM = 5000
 
 HOST_DB = '172.28.5.102'
 TEST_DB = 'testdb'
