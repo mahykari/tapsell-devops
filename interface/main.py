@@ -1,7 +1,11 @@
 from flask import Flask
 from flask import request, render_template
 from mysql import connector
+from gevent import pywsgi
 import redis
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 HOST = '0.0.0.0'
 PORT_NUM = 5000
@@ -33,20 +37,19 @@ class DBInteface:
 			password=MYSQL_PASS,
 			database=TEST_DB
 		)
-		print('Successfully connected to MySQL')
+		logging.info('Successfully connected to MySQL')
 
 	def conn_redis(self):
 		self.redis = redis.Redis(host=HOST_DB, port=6379, db=0)
-		print('Successfully connected to Redis')
+		logging.info('Successfully connected to Redis')
 
 	def get(self, id):
 		if self.redis.exists(id):
-			print('Cache hit, key found in Redis')
+			logging.info(f'Cache hit, key found in Redis (id={id})')
 			return self.get_redis(id)
 		
-		print('Cache miss, reading from MySQL')
+		logging.info(f'Cache miss, reading from MySQL (id={id})')
 		row = self.get_mysql(id)
-		# print(row)
 		hm = {}
 		for i in range(len(PLAYERS_COLS)):
 			hm[str(PLAYERS_COLS[i])] = row[i]
@@ -61,7 +64,6 @@ class DBInteface:
 	def get_redis(self, id):
 		row = self.redis.hgetall(id)
 		row = {str(k, 'utf-8'): str(v, 'utf-8') for k, v in row.items()}
-		# print(row)
 		res = []
 		for col in PLAYERS_COLS:
 			res.append(row[col])
@@ -83,6 +85,10 @@ def home():
 
 sql_query = 'SELECT * FROM players WHERE id = {0}'
 
+@app.route('/request')
+def request_():
+	return render_template('request.html')
+
 @app.route('/result')
 def result():
 	id = request.args.get('id')
@@ -90,4 +96,8 @@ def result():
 	return render_template('result.html', res=res)
 
 if __name__ == '__main__':
-	app.run(host=HOST, port=PORT_NUM)
+	server = pywsgi.WSGIServer((HOST, PORT_NUM), app)
+	try:
+		server.serve_forever()
+	except KeyboardInterrupt:
+		pass
