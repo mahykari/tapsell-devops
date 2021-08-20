@@ -6,10 +6,9 @@ spec:
   selector:
     app: interface
   ports:
-  - protocol: "TCP"
-    port: 6000
+    - port: 6000
     targetPort: 5000
-  type: LoadBalancer
+  type: NodePort
 
 ---
 apiVersion: apps/v1
