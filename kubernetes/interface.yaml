@@ -6,7 +6,7 @@ spec:
   selector:
     app: interface
   ports:
-    - port: 6000
+  - port: 5000
     targetPort: 5000
   type: NodePort
 
