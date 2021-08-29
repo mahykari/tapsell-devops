@@ -1,35 +1,35 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-api-server
+  name: svc-api-nginx
 spec:
   selector:
-    app: api-server
+    app: api-nginx
   ports:
-  - port: 5000
-    targetPort: 5000
+  - port: 80
+    targetPort: 80
   type: NodePort
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-server
+  name: api-nginx
 spec:
   selector:
     matchLabels:
-      app: api-server
-  replicas: 4
+      app: api-nginx
+  replicas: 1
   template:
     metadata:
       labels:
-        app: api-server
+        app: api-nginx
     spec:
       containers:
       - name: api-server
-        image: moyarka/db-api-server:latest
-        imagePullPolicy: IfNotPresent
+        image: moyarka/db-api-nginx:latest
+        imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 80
       imagePullSecrets:
       - name: moykey
