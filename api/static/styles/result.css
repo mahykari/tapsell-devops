@@ -1,11 +1,23 @@
 table, th, td {
-    border: 1px solid black;
+    border: 1px black;
 }
 
 th, td {
     padding: 10px;
 }
 
+th {
+    font-style: bold;
+}
+
 td {
     text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #CCC;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFF;
 }
