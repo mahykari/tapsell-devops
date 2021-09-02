@@ -16,7 +16,7 @@ TEST_DB = 'testdb'
 MYSQL_USER = 'moyk-local'
 MYSQL_PASS = 'M0yk-Loc4l'
 
-PLAYERS_COLS = ('id', 'name', 'rank', 'score', 'join_year')
+PLAYERS_COLS = ('id', 'name', 'rank', 'score', 'join_date')
 
 EXPIRATION_SECS = 600
 
