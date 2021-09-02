@@ -23,3 +23,5 @@ if [ $ret1 -eq 0 ] && [ $ret2 -eq 0 ]; then
 else
     echo -e "${RED}Configs failed${NC}"
 fi
+
+watch kubectl get pods
