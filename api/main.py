@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request, render_template
-from mysql import connector
+from mysql.connector import pooling
 from gevent import pywsgi
 import redis
 import logging
@@ -26,20 +26,27 @@ class DBInteface:
 	def __init__(self):
 		self.mysql_db = None
 		self.redis = None
-	
+
+		self.init_redis()
+		self.init_mysql()
+
 	def __del__(self):
-		self.mysql_db.close()
+		self.redis.close()
 
-	def conn_mysql(self):
-		self.mysql_db = connector.connect(
+	def init_mysql(self):
+		self.mysql_db = pooling.MySQLConnectionPool(
+			pool_name='moypool',
+			pool_size=2,
+			pool_reset_session=True,
 			host=HOST_DB,
+			database=TEST_DB,
 			user=MYSQL_USER,
-			password=MYSQL_PASS,
-			database=TEST_DB
+			password=MYSQL_PASS
 		)
-		logging.info('Successfully connected to MySQL')
 
-	def conn_redis(self):
+		logging.info('Successfully created MySQL connection pool')
+
+	def init_redis(self):
 		self.redis = redis.Redis(host=HOST_DB, port=6379, db=0)
 		logging.info('Successfully connected to Redis')
 
@@ -71,13 +78,18 @@ class DBInteface:
 		return tuple(res)
 
 	def get_mysql(self, id):
-		cursor = self.mysql_db.cursor()
+		conn_obj = self.mysql_db.get_connection()
+		cursor = conn_obj.cursor()
 		cursor.execute(sql_query.format(id))
-		return cursor.fetchall()[0]
+		
+		res = cursor.fetchall()[0]
+		
+		cursor.close()
+		conn_obj.close()
+
+		return res
 
 interface = DBInteface()
-interface.conn_mysql()
-interface.conn_redis()
 
 @app.route('/')
 def home():
