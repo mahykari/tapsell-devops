@@ -26,8 +26,8 @@ cp redis.service /etc/systemd/system/
 # Start Redis
 systemctl start redis
 
-# Enable Redis to Start at Boot (Currently not Needed)
-# systemctl enable redis
+# Enable Redis to Start at Boot
+systemctl enable redis
 
 # Clean
 rm -rf redis-stable/
