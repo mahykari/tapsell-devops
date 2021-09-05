@@ -13,4 +13,6 @@ echo ""
 echo -e "${YELLOW}Applying pod network add-on Antrea...${NC}"
 kubectl apply -f https://raw.githubusercontent.com/antrea-io/antrea/main/build/yamls/antrea.yml
 
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
 watch kubectl get pods -A
